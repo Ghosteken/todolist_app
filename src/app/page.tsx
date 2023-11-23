@@ -1,6 +1,5 @@
 import { TodoItem } from "@/componets/Tdoditem"
 import prisma from "@/db"
-import { log } from "console"
 import Link from "next/link"
 function getTodos() {
   return prisma.todo.findMany()
@@ -20,7 +19,7 @@ async function toggleTodo(id: string,complete: boolean) {
 export default async function Home() {
 
   const todos = await getTodos()
-  //await prisma.todo.create({data: {title: "test", complete: false}})
+
   return <>
     <header className="flex justify-between
     items-center mb-4 " >
